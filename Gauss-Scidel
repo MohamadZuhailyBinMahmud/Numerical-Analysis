@@ -50,7 +50,7 @@ print(Mat,'\n\n')
 final , error = gauss_sidel(Mat,0.01,size) # first run to initialize the final and error array
 count = 1 # initialize the iteration count starting from 1
 
-while (any(x>err_test for x in error[0])) and (any(x>err_test for x in error[1])) and (any(x>err_test for x in error[2])):
+while (any(x>=err_test for x in error[0])) and (any(x>=err_test for x in error[1])) and (any(x>=err_test for x in error[2])):
     # iterate as long as the condition is true (which is > 1% error)
     final , error = gauss_sidel(Mat,0.01,size)
     count+=1
